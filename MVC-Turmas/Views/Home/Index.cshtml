@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Página Inicial";
+}
+
+<div class="text-center mt-5 mb-5">
+    <h1 class="display-4 fw-bold">Gestão de Turmas</h1>
+    <p class="lead text-muted">Selecione uma área para começar a gerir a sua escola.</p>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Card Alunos -->
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center p-4">
+                <div class="display-4 text-primary mb-3">
+                    <i class="bi bi-people"></i>
+                </div>
+                <h5 class="card-title fw-bold">Alunos</h5>
+                <p class="card-text text-muted">Gerir inscrições, dados pessoais e experiências dos alunos.</p>
+                <a asp-controller="Alunos" asp-action="Index" class="btn btn-success stretched-link">Ir para Alunos</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Professores -->
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0">
+            <div class="card-body text-center p-4">
+                <div class="display-4 text-info mb-3">
+                    <i class="bi bi-person-badge"></i>
+                </div>
+                <h5 class="card-title fw-bold">Professores</h5>
+                <p class="card-text text-muted">Consultar corpo docente e atribuição de áreas de ensino.</p>
+                <a asp-controller="Professores" asp-action="Index" class="btn btn-success stretched-link">Ir para Professores</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Turmas -->
+    <div class="col">
+        <div class="card h-100 shadow-sm border-0 border-primary">
+            <div class="card-body text-center p-4">
+                <div class="display-4 text-success mb-3">
+                    <i class="bi bi-mortarboard"></i>
+                </div>
+                <h5 class="card-title fw-bold">Turmas</h5>
+                <p class="card-text text-muted">Organizar turmas, diretores e ver listagens de alunos por sala.</p>
+                <a asp-controller="Turmas" asp-action="Index" class="btn btn-success stretched-link">Ir para Turmas</a>
+            </div>
+        </div>
+    </div>
+</div>

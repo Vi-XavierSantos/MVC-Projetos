@@ -1,0 +1,27 @@
+﻿@model MVC_Turmas.Data.Turma.Turma
+
+<h2>Detalhes da Turma: @Model.Descricao</h2>
+<p><strong>Diretor de Turma:</strong> @Model.DirTurma?.Nome</p>
+
+<hr />
+<h4>Alunos Inscritos (@(Model.Alunos?.Count ?? 0))</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome do Aluno</th>
+            <th>Experiência</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var aluno in Model.Alunos)
+        {
+            <tr>
+                <td>@aluno.Nome</td>
+                <td>@(aluno.TemExperiencia ? "Sim" : "Não")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>

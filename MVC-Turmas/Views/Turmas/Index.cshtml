@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MVC_Turmas.Data.Turma.Turma>
+
+@{
+    ViewData["Title"] = "Listagem de Turmas";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3 mt-3">
+    <h2>Listagem de Turmas</h2>
+    <a asp-action="Create" class="btn btn-primary px-4">Novo Registo</a>
+</div>
+
+<table class="table align-middle">
+    <thead>
+        <tr>
+            <th>Nome da Turma</th>
+            <th>Diretor de Turma</th>
+            <th>Nº de Alunos</th>
+            <th class="text-end">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="fw-bold">@item.Descricao</td>
+                <td>@(item.DirTurma?.Nome ?? "Sem Diretor")</td>
+                <td>@(item.Alunos?.Count ?? 0)</td>
+                <td class="text-end">
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm text-black">Ver Alunos</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

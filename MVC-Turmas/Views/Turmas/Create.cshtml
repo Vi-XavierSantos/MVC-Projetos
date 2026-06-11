@@ -1,0 +1,30 @@
+﻿@model MVC_Turmas.ViewModels.Turma.RegistoTurmaViewModel
+
+<h2>Criar Nova Turma</h2>
+
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Descricao" class="control-label"></label>
+        <input asp-for="Descricao" class="form-control" placeholder="Ex: 10º Ano - Informática" />
+        <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProfessorId" class="control-label"></label>
+        <select asp-for="ProfessorId" asp-items="Model.ProfessoresDisponiveis" class="form-control">
+            <option value="">-- Selecione o Diretor de Turma --</option>
+        </select>
+        <span asp-validation-for="ProfessorId" class="text-danger"></span>
+    </div>
+
+    <div class="alert alert-warning mt-3">
+        <strong>Atenção:</strong> O sistema irá selecionar automaticamente os 10 alunos com mais experiência que ainda não têm turma atribuída.
+    </div>
+
+    <div class="form-group mt-3">
+        <input type="submit" value="Criar Turma e Alocar Alunos" class="btn btn-success" />
+        <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+    </div>
+</form>
